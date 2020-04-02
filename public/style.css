@@ -1,0 +1,250 @@
+/* Variables and root setting */
+/* 1rem = 10px, or 62.5% of the standard 16px */
+:root {
+  font-size: 62.5%;
+  --bg: white;
+  --off-bg: whitesmoke;
+  --fg: black;
+  --off-fg: slategrey;
+  --accent1: deepskyblue;
+  --accent2: gold;
+  --max-flex-width: 60vw;
+  --max-image-width-small: 20vh;
+  --max-image-width-medium: 30vh;
+  --flex-wrap: nowrap;
+}
+
+/* Responsive stuff */
+@media only screen and (min-width: 1200px) {
+  :root {
+    --max-flex-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .--additional {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  :root {
+    --max-flex-width: 90vw;
+    --max-image-width-medium: 20vh;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  :root {
+    --flex-wrap: wrap;
+    --max-image-width-medium: 30vh;
+  }
+}
+
+/* Dark color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: black;
+    --off-bg: slategrey;
+    --fg: whitesmoke;
+    --off-fg: wheat;
+    --accent1: gold;
+    --accent2: dodgerblue;
+  }
+  img {
+    opacity: 0.9;
+    transition: opacity 0.5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+  img:not(.--photo) {
+    filter: invert(100%) hue-rotate(180deg) saturate(0) brightness(200%)
+      contrast(200%);
+  }
+  /* FIXME: This should be separate from the above style */
+  /*   .--desaturate {
+    filter: saturate(0) brightness(200%) contrast(200%);
+  } */
+}
+
+/* Resetting and body stuff */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body font size 16px */
+body {
+  font-size: 1.6rem;
+  font-family: "Sen", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+mark {
+  background: var(--accent2);
+}
+
+/* Link Styling */
+a {
+  color: currentColor;
+  text-decoration: none;
+  text-decoration-skip: leading-spaces trailing-spaces edges;
+  text-decoration-skip-ink: auto;
+}
+
+a:hover,
+a:active {
+  text-decoration-thickness: 0.1rem;
+  text-decoration-line: underline;
+}
+
+a:active {
+  text-decoration-thickness: 0.2rem;
+}
+
+::selection {
+  background: var(--accent1);
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  z-index: 99;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  opacity: 0.8;
+  background: var(--fg);
+  color: var(--off-bg);
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .navbar {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.nav-item {
+  font-size: 1.8rem;
+}
+
+.navbar-nav img {
+  width: auto;
+  max-height: 7vh;
+}
+
+/* Intro image or video */
+header {
+  height: 90vh;
+  background: radial-gradient(ellipse at top, var(--off-bg), transparent),
+    radial-gradient(ellipse at bottom, transparent, var(--bg));
+  background-color: var(--off-bg);
+}
+
+header,
+section:not(:last-of-type) {
+  clip-path: polygon(100% 0, 100% 85%, 50% 95%, 0 85%, 0 0);
+}
+
+header img {
+  display: block;
+  margin: auto;
+  height: 70vh;
+}
+
+header h1 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  font-size: 4rem;
+}
+
+/* Everything below is for the content */
+section {
+  height: 100vh;
+  color: var(--fg);
+  background: linear-gradient(var(--bg), var(--off-bg));
+  padding: 0 10vw;
+}
+
+section h2 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 8rem;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+section p {
+  padding: 1rem;
+}
+
+section a:link {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.1rem;
+}
+
+section img {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+/* Flexbox stuff follows, this is a WIP */
+.flex {
+  display: flex;
+  flex-wrap: var(--flex-wrap);
+  justify-content: space-between;
+  align-items: center;
+  /* FIXME: This feels like it should be padding-bottom on the section, but that doesn't work */
+  height: 60%;
+  max-width: var(--max-flex-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex__item {
+  flex: 1 1 auto;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.--main {
+  width: 66%;
+}
+
+.--small {
+  max-width: var(--max-image-width-small);
+}
+
+.--medium {
+  max-width: var(--max-image-width-medium);
+}
+
+#contact p {
+  text-align: center;
+  font-size: 3.6rem;
+}
