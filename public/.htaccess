@@ -1,7 +1,13 @@
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^(http://|)riseandshinefilms\.com
+RewriteCond %{HTTP_HOST} ^riseandshinefilms\.com
 RewriteRule ^([0-9]+)/?$ en/ [NC,L,R=301]
 
-RewriteCond %{HTTP_HOST} ^(http://|)riseandshinefilms\.ch
+RewriteCond %{HTTP_HOST} ^riseandshinefilms\.ch
+RewriteRule ^([0-9]+)/?$ de/ [NC,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^http://riseandshinefilms\.com
+RewriteRule ^([0-9]+)/?$ en/ [NC,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^http://riseandshinefilms\.ch
 RewriteRule ^([0-9]+)/?$ de/ [NC,L,R=301]
