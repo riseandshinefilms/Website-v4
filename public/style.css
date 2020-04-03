@@ -6,6 +6,8 @@
   --bg: white;
   --off-bg: whitesmoke;
   --fg: black;
+  --fg-08: hsl(0, 0%, 20%);
+  --fg-01: #000000;
   --off-fg: slategrey;
   --accent1: deepskyblue;
   --accent2: gold;
@@ -18,7 +20,7 @@
   --flex-direction-row: column;
   --h1-size: 4rem;
   --h2-padding-top: 12vh;
-  --section-img-margin: 1rem auto 0 auto;
+  --section-img-margin: 1rem 0 0 0;
 }
 
 /* Responsive stuff */
@@ -97,7 +99,7 @@ body {
   font-size: 1.6rem;
   font-family: "Sen", system-ui, sans-serif;
   color: var(--fg);
-  background: var(--bg);
+  background: var(--fg-08);
 }
 
 #--non-footer-wrapper {
@@ -139,6 +141,8 @@ a:active {
   z-index: 99;
   top: 0;
   height: 10vh;
+  background: var(--fg);
+  opacity: 0.8;
 }
 
 .navbar,
@@ -146,8 +150,6 @@ footer {
   position: sticky;
   width: 100%;
   color: var(--off-bg);
-  background: var(--fg);
-  opacity: 0.8;
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 }
 
@@ -159,6 +161,7 @@ footer {
   display: grid;
   place-items: auto;
   padding: 5rem;
+  background: var(--fg-08);
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
