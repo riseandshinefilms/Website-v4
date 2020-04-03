@@ -7,7 +7,6 @@
   --off-bg: whitesmoke;
   --fg: black;
   --fg-08: hsl(0, 0%, 20%);
-  --fg-01: #000000;
   --off-fg: slategrey;
   --accent1: deepskyblue;
   --accent2: gold;
@@ -59,6 +58,7 @@
   }
   footer {
     font-size: 1rem;
+    padding: 5rem 2rem;
   }
 }
 
@@ -68,6 +68,7 @@
     --bg: black;
     --off-bg: slategrey;
     --fg: whitesmoke;
+    --fg-08: hsl(0, 0%, 80%);
     --off-fg: wheat;
     --accent1: orange;
     --accent2: dodgerblue;
@@ -146,6 +147,7 @@ a:active {
   height: 10vh;
   background: var(--fg);
   opacity: 0.8;
+  box-shadow: hsla(0, 0%, 0%, 0.1) 0px 0.175em 0.5em;
 }
 
 .navbar,
@@ -153,7 +155,6 @@ footer {
   position: sticky;
   width: 100%;
   color: var(--off-bg);
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 }
 
 footer {
@@ -256,6 +257,10 @@ section picture:first-of-type img {
   margin-left: 0;
 }
 
+section picture:only-of-type img {
+  margin: auto;
+}
+
 section img.--desaturate {
   filter: var(--desaturate);
   transition: filter 0.5s ease-in-out;
@@ -312,4 +317,5 @@ section img.--desaturate:hover {
 
 .--logo {
   max-width: calc(var(--max-image-width-small) / 2);
+  margin: 0 1rem 0;
 }
