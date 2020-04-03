@@ -2,6 +2,7 @@
 /* 1rem = 10px, or 62.5% of the standard 16px */
 :root {
   font-size: 62.5%;
+  scroll-behavior: smooth;
   --bg: white;
   --off-bg: whitesmoke;
   --fg: black;
@@ -89,10 +90,6 @@
 
 ul {
   list-style-type: none;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 /* Body font size 16px */
