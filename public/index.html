@@ -46,86 +46,103 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      <!-- TODO: Make this svg and maybe also sticky https://css-tricks.com/indicating-scroll-position-on-a-page-with-css/-->
-      <!-- <li>
+  <div id="--non-footer-wrapper">
+    <nav class="navbar">
+      <ul class="flex-nav navbar-nav">
+        <!-- TODO: Make this svg and maybe also sticky https://css-tricks.com/indicating-scroll-position-on-a-page-with-css/-->
+        <!-- <li>
         <a href="#">
           <img src="images/riseandshinefilms_logo.png" alt="Rise and Shine Films Logo" />
         </a>
       </li> -->
-      <li class="nav-item"><a href="#work">Work</a></li>
-      <li class="nav-item"><a href="#about">About</a></li>
-      <li class="nav-item"><a href="#contact">Contact</a></li>
-      <!-- Add language switch -->
-    </ul>
-  </nav>
-  <header>
-    <picture>
-      <source srcset="images/riseandshinefilms_feature.webp" type="image/webp">
-      <img src="images/riseandshinefilms_feature.png" alt="Rise and Shine Films Logo" />
-    </picture>
-    <h1>Content Creation and Production</h1>
-  </header>
-  <main>
-    <section id="work">
-      <h2>Work</h2>
-      <div class="flex">
-        <div class="flex__item --main">
-          <p>We <mark>write, direct and produce</mark> video content for medium and large enterprises. We are based in
-            Switzerland, but we collaborate globally. Our strong suit is the tricky stuff: If your project is complex
-            and a lot is at stake, we are the right guys.</p>
-          <p class="--additional">In the past we have also made a number of really short <mark>short films</mark>, like
-            <a href="https://vimeo.com/riseandshinefilms/vand">VAND</a> and
-            <a href="https://vimeo.com/riseandshinefilms/wired">Wired</a>, and a few more involved projects, like <a
-              href="https://vimeo.com/riseandshinefilms/birdsanddice">Birds and Dice</a>. Right now we are
-            working on a <mark>TV series</mark> about human trafficking, called Alina.</p>
+        <li class="nav-item"><a href="#work">Work</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+        <!-- Add language switch -->
+      </ul>
+    </nav>
+    <header>
+      <picture>
+        <source srcset="images/riseandshinefilms_feature.webp" type="image/webp">
+        <img src="images/riseandshinefilms_feature.png" alt="Rise and Shine Films Logo" />
+      </picture>
+      <h1>Content Creation and Production</h1>
+    </header>
+    <main>
+      <section id="work">
+        <h2>Work</h2>
+        <div class="flex">
+          <div class="flex__item --main">
+            <p>We <mark>write, direct and produce</mark> video content for medium and large enterprises. We are based in
+              Switzerland, but we collaborate globally. Our strong suit is the tricky stuff: If your project is complex
+              and a lot is at stake, we are the right guys.</p>
+            <p class="--additional">In the past we have also made a number of really short <mark>short films</mark>,
+              like
+              <a href="https://vimeo.com/riseandshinefilms/vand">VAND</a> and
+              <a href="https://vimeo.com/riseandshinefilms/wired">Wired</a>, and a few more involved projects, like <a
+                href="https://vimeo.com/riseandshinefilms/birdsanddice">Birds and Dice</!DOCTYPE>. Right now we are
+              working on a <mark>TV series</mark> about human trafficking, called Alina.</p>
+          </div>
+          <div class="flex__item">
+            <picture>
+              <source srcset="images/client_grid_1.webp" type="image/webp">
+              <img class="--medium --desaturate" src="images/client_grid_1.png" alt="Client logos">
+            </picture>
+          </div>
         </div>
-        <div class="flex__item">
-          <picture>
-            <source srcset="images/client_grid_1.webp" type="image/webp">
-            <img class="--medium --desaturate" src="images/client_grid_1.png" alt="Client logos">
-          </picture>
+      </section>
+      <section id="about">
+        <h2>About</h2>
+        <div class="flex flex--wrap-reverse">
+          <div class="flex__item flex__item--direction-row">
+            <picture>
+              <source srcset="images/philipp_andonie.webp" type="image/webp">
+              <img class="--photo --small" src="images/philipp_andonie.jpg" alt="Philipp Andonie">
+            </picture>
+            <picture>
+              <source srcset="images/manuel_imboden.webp" type="image/webp">
+              <img class="--photo --small" src="images/manuel_imboden.jpg" alt="Manuel Imboden">
+            </picture>
+          </div>
+          <div class="flex__item --main">
+            <p>We are a duo of filmmakers who cover a range of skills: <mark>Philipp</mark> is the man with the
+              creative vision – he writes, directs and edits.</p>
+            <p><mark>Manuel</mark> is the guy who keeps things in order – he produces,
+              organizes and does the tech stuff.</p>
+            <p class="--additional">With <mark>200+ client projects</mark> and 8 short films under our shared belt now,
+              we
+              continue building Rise and Shine Films on the same key principles since 2013: 1. Every project is unique,
+              2.
+              More
+              isn't always better and 3. Don't panic.</p>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <div class="flex flex--wrap-reverse">
-        <div class="flex__item flex__item--direction-row">
-          <picture>
-            <source srcset="images/philipp_andonie.webp" type="image/webp">
-            <img class="--photo --small" src="images/philipp_andonie.jpg" alt="Philipp Andonie">
-          </picture>
-          <picture>
-            <source srcset="images/manuel_imboden.webp" type="image/webp">
-            <img class="--photo --small" src="images/manuel_imboden.jpg" alt="Manuel Imboden">
-          </picture>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="flex">
+          <div class="flex__item">
+            <p>Say <a href="mailto:hello@riseandshinefilms.ch">hello@<wbr>riseandshinefilms.ch</a> or skip
+                ahead and <a href="https://forms.gle/Rcncy2XGQ9o7whJq6">request a quote</a>.</p>
+          </div>
         </div>
-        <div class="flex__item --main">
-          <p>We are a duo of filmmakers who cover a range of skills: <mark>Philipp</mark> is the man with the
-            creative vision – he writes, directs and edits.</p>
-          <p><mark>Manuel</mark> is the guy who keeps things in order – he produces,
-            organizes and does the tech stuff.</p>
-          <p class="--additional">With <mark>200+ client projects</mark> and 8 short films under our shared belt now, we
-            continue building Rise and Shine Films on the same key principles since 2013: 1. Every project is unique, 2.
-            More
-            isn't always better and 3. Don't panic.</p>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="flex">
-        <div class="flex__item">
-          <p>Say <a href="mailto:hello@riseandshinefilms.ch">hello@<wbr>riseandshinefilms.ch</a> or skip
-              ahead and <a href="https://forms.gle/Rcncy2XGQ9o7whJq6">request a quote</a>.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
   <footer>
-    <!-- TODO: Maybe add a slideout footer? https://css-tricks.com/the-slideout-footer/ -->
+    <div class="flex-nav">
+      <p><a href="https://g.page/riseandshinefilms">Rise and Shine Films LLC<br>Bahnstrasse 44<br>3008 Bern</a><br><a
+          href="tel:0041315080708">T: +41 31 508 07 08</a>
+      </p>
+      <img class="--logo" src="images/riseandshinefilms_logo.svg" alt="Rise and Shine Films Logo">
+      <p style="text-align: right;"><a
+          href="https://docs.google.com/document/d/e/2PACX-1vQV4e-z0lQt10ZnFqb0V9-lWE_LQybfFmKahD08tqvtcIW9irPtdqTeVf8zKd_iI7yHNA-Nrwjgrpfu/pub">Terms
+          and Conditions</a><br><a
+          href="https://docs.google.com/document/d/e/2PACX-1vTcLF3TbDbDaqfeintbwF0JuuSPzW6za65DrhMqLS_IqyxtknqQjS7Nv0MPnoUkDpVbLkHBHO1nTFz2/pub">Privacy
+          Policy</a>
+        <!-- <br><br><a href="https://airtable.com/shrxLYM491FEAnv7T"><mark>Crew Form</mark></a> -->
+      </p>
+
   </footer>
 </body>
 

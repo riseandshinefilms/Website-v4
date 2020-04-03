@@ -84,6 +84,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 ul {
@@ -97,8 +98,15 @@ html {
 /* Body font size 16px */
 body {
   font-size: 1.6rem;
-  font-family: "Sen", sans-serif;
+  font-family: "Sen", system-ui, sans-serif;
   color: var(--fg);
+  background: var(--bg);
+}
+
+#--non-footer-wrapper {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
@@ -129,17 +137,31 @@ a:active {
   background: var(--accent1);
 }
 
-/* Navbar */
+/* Navbar and Footer*/
 .navbar {
-  position: sticky;
   z-index: 99;
   top: 0;
   height: 10vh;
+}
+
+.navbar,
+footer {
+  position: sticky;
   width: 100%;
-  opacity: 0.8;
-  background: var(--fg);
   color: var(--off-bg);
+  background: var(--fg);
+  opacity: 0.8;
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  max-height: 20vh;
+  display: grid;
+  place-items: auto;
+  padding: 5rem;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -149,10 +171,13 @@ a:active {
   }
 }
 
-.navbar-nav {
+.flex-nav {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.navbar-nav {
   height: 100%;
 }
 
@@ -280,4 +305,8 @@ section img.--desaturate:hover {
 #contact p {
   text-align: center;
   font-size: calc(var(--h1-size) / 1.5);
+}
+
+.--logo {
+  max-width: calc(var(--max-image-width-small) / 2);
 }
