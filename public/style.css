@@ -57,6 +57,9 @@
     --h1-size: 3.6rem;
     --h2-padding-top: 15vh;
   }
+  footer {
+    font-size: 1rem;
+  }
 }
 
 /* Dark color scheme */
@@ -212,8 +215,8 @@ header img {
 
 header h1 {
   position: absolute;
-  top: 80%;
-  left: 50%;
+  top: 80vh;
+  left: 50vw;
   transform: translate(-50%, -80%);
   font-size: var(--h1-size);
 }
