@@ -58,7 +58,6 @@
   }
   footer {
     font-size: 1rem;
-    padding: 5rem 2rem;
   }
 }
 
@@ -73,6 +72,10 @@
     --accent1: orange;
     --accent2: dodgerblue;
     --desaturate: saturate(0) brightness(1000%) contrast(200%);
+  }
+  section {
+    background: linear-gradient(var(--bg), var(--off-bg)),
+      radial-gradient(ellipse at bottom, transparent, var(--bg));
   }
   img {
     opacity: 0.8;
@@ -122,18 +125,33 @@ mark {
 a {
   color: currentColor;
   text-decoration: none;
+  text-decoration-thickness: 0rem;
+  position: relative;
   text-decoration-skip: leading-spaces trailing-spaces edges;
   text-decoration-skip-ink: auto;
 }
 
-a:hover,
-a:active {
-  text-decoration-thickness: 0.1rem;
-  text-decoration-line: underline;
+a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.2rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg);
+  visibility: hidden;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+nav a:hover:before,
+footer a:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 
 a:active {
-  text-decoration-thickness: 0.2rem;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.4rem;
 }
 
 ::selection {
@@ -164,7 +182,7 @@ footer {
   max-height: 20vh;
   display: grid;
   place-items: auto;
-  padding: 5rem;
+  padding: 5rem 2rem;
   background: var(--fg-08);
 }
 
@@ -242,8 +260,21 @@ section p {
 }
 
 section a:link {
+  background: linear-gradient(
+    to bottom,
+    var(--accent2) 0%,
+    var(--accent2) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-y;
+  background-size: 0px 4px;
   text-decoration-line: underline;
   text-decoration-thickness: 0.1rem;
+  transition: background-size 0.5s ease-in-out 0s;
+}
+
+section a:hover {
+  background-size: 100% 0.4rem;
 }
 
 section img {
