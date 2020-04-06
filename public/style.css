@@ -101,7 +101,6 @@ ul {
   list-style-type: none;
 }
 
-/* Body font size 16px */
 body {
   font-size: 1.6rem;
   font-family: "Sen", system-ui, sans-serif;
@@ -112,9 +111,13 @@ body {
 #--non-footer-wrapper {
   min-height: 100vh;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   background: var(--bg);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+::selection {
+  background: var(--accent1);
 }
 
 mark {
@@ -154,10 +157,6 @@ a:active {
   text-decoration-thickness: 0.4rem;
 }
 
-::selection {
-  background: var(--accent1);
-}
-
 /* Navbar and Footer*/
 .navbar {
   z-index: 99;
@@ -166,6 +165,7 @@ a:active {
   background: var(--fg);
   opacity: 0.8;
   box-shadow: hsla(0, 0%, 0%, 0.1) 0px 0.175em 0.5em;
+  backdrop-filter: blur(4px);
 }
 
 .navbar,
@@ -184,13 +184,6 @@ footer {
   place-items: auto;
   padding: 5rem 2rem;
   background: var(--fg-08);
-}
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .navbar {
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-  }
 }
 
 .flex-nav {
