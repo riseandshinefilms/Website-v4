@@ -22,23 +22,6 @@
   --section-img-margin: 1rem 0 0 0;
 }
 
-/* Fonts */
-@font-face {
-  font-family: "Abril Fatface";
-  src: url("fonts/abrilfatface-regular-webfont.woff2") format("woff2"),
-    url("fonts/abrilfatface-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sen";
-  src: url("fonts/sen-regular-webfont.woff2") format("woff2"),
-    url("fonts/sen-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Media Queries */
 @media only screen and (min-width: 1200px) {
   :root {
