@@ -22,7 +22,24 @@
   --section-img-margin: 1rem 0 0 0;
 }
 
-/* Responsive stuff */
+/* Fonts */
+@font-face {
+  font-family: "Abril Fatface";
+  src: url("fonts/abrilfatface-regular-webfont.woff2") format("woff2"),
+    url("fonts/abrilfatface-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sen";
+  src: url("fonts/sen-regular-webfont.woff2") format("woff2"),
+    url("fonts/sen-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Media Queries */
 @media only screen and (min-width: 1200px) {
   :root {
     --max-flex-width: 720px;
@@ -102,8 +119,7 @@ ul {
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: "Sen", system-ui, sans-serif;
+  font: 1.6rem "Sen", system-ui, sans-serif;
   color: var(--fg);
   background: var(--fg-08);
 }
@@ -124,7 +140,7 @@ mark {
   background: var(--accent2);
 }
 
-/* Link Styling */
+/* Links */
 a {
   color: currentColor;
   text-decoration: none;
@@ -186,6 +202,11 @@ footer {
   background: var(--fg-08);
 }
 
+footer img {
+  max-width: calc(var(--max-image-width-small) / 2);
+  margin: 0 1rem 0;
+}
+
 .flex-nav {
   display: flex;
   align-items: center;
@@ -242,7 +263,7 @@ section {
 }
 
 section h2 {
-  font-family: "Abril Fatface", cursive;
+  font-family: "Abril Fatface", Georgia, cursive;
   font-size: calc(var(--h1-size) * 2);
   text-align: center;
   padding-top: var(--h2-padding-top);
@@ -337,9 +358,4 @@ section img.--desaturate:hover {
 #contact p {
   text-align: center;
   font-size: calc(var(--h1-size) / 1.5);
-}
-
-.--logo {
-  max-width: calc(var(--max-image-width-small) / 2);
-  margin: 0 1rem 0;
 }
