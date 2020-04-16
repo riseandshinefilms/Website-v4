@@ -181,14 +181,12 @@ footer {
   max-height: 20vh;
   display: grid;
   place-items: auto;
-  padding: 5rem 2rem;
+  padding: 2.5vh 1vw;
   background: var(--fg-08);
 }
 
 footer img {
-  min-width: 10rem;
-  max-width: calc(var(--max-image-width-small) / 2);
-  margin: 0 1rem 0;
+  width: calc(var(--max-image-width-small) / 1.75);
 }
 
 .flex-nav {
